@@ -6,7 +6,7 @@ import retrofit2.Retrofit;
 
 public class UserController {
 
-    private static String baseUrl = "https://reqres.in/";
+    private static String baseUrl = "https://reqres.in/"; //TODO: put in config
 
     public static APIInterface getUserManagerService(Converter.Factory converterFactory)
     {

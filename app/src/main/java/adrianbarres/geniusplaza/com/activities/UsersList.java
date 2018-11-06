@@ -1,9 +1,12 @@
 package adrianbarres.geniusplaza.com.activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,16 +30,31 @@ public class UsersList extends AppCompatActivity {
 
     private ListView userListView = null;
 
+    private Button gotoAddUser = null;
+
     private ProgressDialog progressDialog = null;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users_list);
         setTitle("GeniusPlaza - Adrian Barres Assessment.");
         initControls();
         loadUsers();
+
+
+        gotoAddUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AddUser.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
+
+
 
     private void loadUsers() {
         showProgressDialog();
@@ -86,6 +104,11 @@ public class UsersList extends AppCompatActivity {
         }
         if (progressDialog == null) {
             progressDialog = new ProgressDialog(UsersList.this);
+        }
+
+        if(gotoAddUser == null)
+        {
+            gotoAddUser = (Button)findViewById(R.id.gotoAddUser);
         }
     }
 
