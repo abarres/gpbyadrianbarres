@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GeniusPlazaSample</string>
+    <string name="list_all_users_label">List All Users</string>
 </resources>

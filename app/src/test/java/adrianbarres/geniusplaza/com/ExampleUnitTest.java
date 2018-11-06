@@ -1,4 +1,4 @@
-package adrianbarres.geniusplaza.com.geniusplazasample;
+package adrianbarres.geniusplaza.com;
 
 import org.junit.Test;
 
